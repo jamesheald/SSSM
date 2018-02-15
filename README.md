@@ -3,7 +3,7 @@ Motor adaptation as online state and parameter estimation in a switching state-s
 
 State inference is performed using the generalised pseudo-Bayesian 1 (GPB1) algorithm. GPB1 is an assumed density filtering method that approximates the exact posterior of the state (a mixture of Gaussians with *M<sup>T</sup>* components, where *M* is the number of modes and *T* is the number of trials) with a single Gaussian.
 
-Source code files:
+Source code:
 
 - KF: recursive Bayesian estimation using a bank of Kalman filters
 - MM: moment matching to approximate the true belief state with a single Gaussian
