@@ -19,6 +19,7 @@ num = cLy(:,t) + log(cPre)';
 denom = max(num) + log(sum(exp(num - max(num))));
 cPost = exp(num - denom);
 
+% Approximate mixture of gaussians with single Gaussian
 xm = xf(:,:,t)*cPost;
 err = xf(:,:,t) - repmat(xm,1,nC);
 Vm = zeros(nS,nS);
@@ -27,5 +28,6 @@ for c = 1:nC
 end
 % Vm = sum((V(:,:,:,t) + repmat(reshape(err,[1,nS,nC]),[nS,1,1]).*repmat(reshape(err,[nS,1,nC]),[1,nS,1])).*permute(repmat(cPost,1,nS,nS),[3,2,1]),3);
 
+% Predict observation
 yp = sum(dot(C',xp(:,:,t)).*cPre);
 
