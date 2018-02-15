@@ -44,7 +44,7 @@ for s = Subj(:)'
             Vprev = Vm(:,:,t-1);
         end
         [xp(:,:,t),Vp(:,:,t),xf(:,:,t),Vf(:,:,:,t),cL(:,t)] = KF(A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev,s);
-        [cPost(:,t),xm(:,t),Vm(:,:,t),yp(q(t,s),t)] = GPB1(C,Phi,nC,nS,q,cL,t,xf,xp,Vf,s);
+        [cPost(:,t),xm(:,t),Vm(:,:,t),yp(q(t,s),t)] = MM(C,Phi,nC,nS,q,cL,t,xf,xp,Vf,s);
         [S,Phi] = EM(S,Phi,cPost,nC,nQ,q(t,s),eta,t);
     end
 
