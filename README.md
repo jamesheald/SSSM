@@ -5,7 +5,7 @@ State inference is performed using the generalised pseudo-Bayesian 1 (GPB1) algo
 
 Source code files:
 
-- KF: recursive Bayesian estimation in a conditionally linear-Gaussian system using a bank of Kalman filters
+- KF: recursive Bayesian estimation using a bank of Kalman filters
 - MM: moment matching to approximate the true belief state with a single Gaussian
 - EM: online expectation maximisation to learn cue emission probabilities
 
