@@ -1,4 +1,4 @@
-function [cPost,xm,Vm,yp] = GPB1(C,Phi,nC,nS,q,cLy,t,xf,xp,V,s)
+function [cPost,xm,Vm,yp] = MM(C,Phi,nC,nS,q,cLy,t,xf,xp,V,s)
 % GBP1 algorithm
 % Merge histories by moment matching (assumed density filtering)
 % INPUTS:
