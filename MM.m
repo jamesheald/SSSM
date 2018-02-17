@@ -1,5 +1,4 @@
 function [cPost,xm,Vm,yp] = MM(C,Phi,nC,nS,q,cLy,t,xf,xp,V,s)
-% GBP1 algorithm
 % Merge histories by moment matching (assumed density filtering)
 % INPUTS:
 % C     - observation vectors
@@ -12,14 +11,15 @@ function [cPost,xm,Vm,yp] = MM(C,Phi,nC,nS,q,cLy,t,xf,xp,V,s)
 % xm    - moment matched state estimate
 % Vm    - moment matched state covariance matrix
 
-% Bayes rule using log-sum-exp trick to avoid numerical underflow
+% Using log-sum-exp trick to avoid numerical underflow when Bayes' rule
 Jcq = Phi(q(t,s),:,t);
 cPre = Jcq/sum(Jcq);
 num = cLy(:,t) + log(cPre)';
 denom = max(num) + log(sum(exp(num - max(num))));
 cPost = exp(num - denom);
 
-% Approximate mixture of gaussians with single Gaussian
+% Approximate mixture of Gaussians with a single Gaussian
+% Minimise KL divergence between p and q by matching moments
 xm = xf(:,:,t)*cPost;
 err = xf(:,:,t) - repmat(xm,1,nC);
 Vm = zeros(nS,nS);
