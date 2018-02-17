@@ -4,5 +4,5 @@ Motor adaptation as online state and parameter estimation in a switching state-s
 Source code files:
 
 - KF: recursive Bayesian estimation using a bank of Kalman filters
-- MM: moment matching to approximate the true belief state with a single Gaussian
+- ADF: assumed density filtering to approximate the true belief state with a single Gaussian
 - EM: online expectation maximisation to learn the cue emission probabilities
