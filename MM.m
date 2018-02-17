@@ -1,5 +1,5 @@
-function [cPost,xm,Vm,yp] = MM(C,Phi,nC,nS,q,cLy,t,xf,xp,V,s)
-% Merge histories by moment matching (assumed density filtering)
+function [cPost,xm,Vm,yp] = ADF(C,Phi,nC,nS,q,cLy,t,xf,xp,V,s)
+% Assumed density filtering
 % INPUTS:
 % C     - observation vectors
 % cLy   - context log likelihood
@@ -11,7 +11,7 @@ function [cPost,xm,Vm,yp] = MM(C,Phi,nC,nS,q,cLy,t,xf,xp,V,s)
 % xm    - moment matched state estimate
 % Vm    - moment matched state covariance matrix
 
-% Using log-sum-exp trick to avoid numerical underflow when Bayes' rule
+% Calculate Bayes' rule using log-sum-exp trick to avoid numerical underflow
 Jcq = Phi(q(t,s),:,t);
 cPre = Jcq/sum(Jcq);
 num = cLy(:,t) + log(cPre)';
@@ -19,7 +19,6 @@ denom = max(num) + log(sum(exp(num - max(num))));
 cPost = exp(num - denom);
 
 % Approximate mixture of Gaussians with a single Gaussian
-% Minimise KL divergence between p and q by matching moments
 xm = xf(:,:,t)*cPost;
 err = xf(:,:,t) - repmat(xm,1,nC);
 Vm = zeros(nS,nS);
