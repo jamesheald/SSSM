@@ -34,10 +34,10 @@ for t = 1:nT
     if t == 1
         xprev = x0;
         Vprev = V0;
-        Phi(:,:,1) = Phi0;
+        I.Phi(:,:,1) = Phi0;
     else
-        xprev = xm(:,t-1);
-        Vprev = Vm(:,:,t-1);
+        xprev = I.xm(:,t-1);
+        Vprev = I.Vm(:,:,t-1);
     end
     [I.xp(:,:,t),I.Vp(:,:,t),I.xf(:,:,t),I.Vf(:,:,:,t),I.cL(:,t)] = KF(A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev);
     [I.cPost(:,t),I.xm(:,t),I.Vm(:,:,t),I.yp(q(t),t)] = ADF(C,I.Phi,nC,nS,q,I.cL,t,I.xf,I.xp,I.Vf);
