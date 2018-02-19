@@ -40,6 +40,6 @@ for t = 1:nT
         Vprev = Vm(:,:,t-1);
     end
     [I.xp(:,:,t),I.Vp(:,:,t),I.xf(:,:,t),I.Vf(:,:,:,t),I.cL(:,t)] = KF(A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev);
-    [I.cPost(:,t),I.xm(:,t),I.Vm(:,:,t),I.yp(q(t,s),t)] = ADF(C,I.Phi,nC,nS,q,I.cL,t,I.xf,I.xp,I.Vf);
-    [I.S,I.Phi] = EM(I.S,I.Phi,I.cPost,nC,nQ,q(t,s),eta,t);
+    [I.cPost(:,t),I.xm(:,t),I.Vm(:,:,t),I.yp(q(t),t)] = ADF(C,I.Phi,nC,nS,q,I.cL,t,I.xf,I.xp,I.Vf);
+    [I.S,I.Phi] = EM(I.S,I.Phi,I.cPost,nC,nQ,q(t),eta,t);
 end
