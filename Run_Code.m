@@ -36,7 +36,7 @@ y(:,1,expT) = 1;
 y(1:8,2,expT) = 1;
 y(9:16,2,expT) = -1;
 
-Inference = SSSM(A,Q,C,R,Phi0,eta,y,x0,V0,q,Channel,nC,nS,nT,nQ,Subj);
+Inference = SSSM(A,Q,C,R,Phi0,eta,y,x0,V0,q,Channel,nC,nS,nT,nQ);
 
 %% Figures
 
