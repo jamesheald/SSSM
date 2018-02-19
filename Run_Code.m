@@ -1,4 +1,10 @@
-load Experiment2_Trials
+load Experiment_2_Paradigm.mat
+
+Sub = 1;                                % example same-field participant
+% Sub = 2;                                % example opposing-field participant
+
+Channel = Channel(:,Sub);
+q = q(:,Sub);
 
 Subj = [1:8; ...                        % same-field participants
         9:16];                          % opposing-field participants
