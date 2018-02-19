@@ -26,8 +26,8 @@ ric1 = dare(A,[1 1 0 0]',Q,R);
 ric2 = dare(A,[0 0 1 1]',Q,R);
 V0 = (ric1+ric2)/2; 
 
-% initial estimate of cue emission probabilities
-phi0 = 0.5+1e-6;
+% initial estimate of the cue emission probabilities
+phi0 = 0.5 + 1e-6;
 Phi0 = toeplitz([phi0 1-phi0]);
 
 % noiesless observations
