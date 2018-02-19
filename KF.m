@@ -1,4 +1,4 @@
-function [xp,Vp,xf,Vf,cL] = KF(A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev,s)
+function [xp,Vp,xf,Vf,cL] = KF(A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev)
 % Bank of Kalman filters
 
 if t == 1
@@ -13,7 +13,7 @@ end
 if Channel(t,s)
     e = zeros(nC,1);
 else
-    e = y(s,q(t,s),t) - C*xp;
+    e = y(s,q(t),t) - C*xp;
 end
 
 % update state estimate
