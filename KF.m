@@ -10,10 +10,10 @@ else
 end
 
 % prediction error
-if Channel(t,s)
+if Channel(t)
     e = zeros(nC,1);
 else
-    e = y(s,q(t),t) - C*xp;
+    e = y(q(t),t) - C*xp;
 end
 
 % update state estimate
