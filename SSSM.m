@@ -39,7 +39,7 @@ for t = 1:nT
         xprev = xm(:,t-1);
         Vprev = Vm(:,:,t-1);
     end
-    [xp(:,:,t),Vp(:,:,t),xf(:,:,t),Vf(:,:,:,t),cL(:,t)] = KF(A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev,s);
-    [cPost(:,t),xm(:,t),Vm(:,:,t),yp(q(t,s),t)] = ADF(C,Phi,nC,nS,q,cL,t,xf,xp,Vf,s);
-    [S,Phi] = EM(S,Phi,cPost,nC,nQ,q(t,s),eta,t);
+    [I.xp(:,:,t),I.Vp(:,:,t),I.xf(:,:,t),I.Vf(:,:,:,t),I.cL(:,t)] = KF(A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev);
+    [I.cPost(:,t),I.xm(:,t),I.Vm(:,:,t),I.yp(q(t,s),t)] = ADF(C,I.Phi,nC,nS,q,I.cL,t,I.xf,I.xp,I.Vf);
+    [I.S,I.Phi] = EM(I.S,I.Phi,I.cPost,nC,nQ,q(t,s),eta,t);
 end
