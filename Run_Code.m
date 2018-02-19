@@ -13,7 +13,7 @@ nS   = nC*nSC;                          % total number of continuous hidden stat
 % SSSM model parameters
 A = diag(repmat([0.9946 0.9404],1,nC)); % continuous state transition matrix
 Q = diag(repmat([0.0003 0.0068],1,nC)); % process noise matrix
-C = repelem(eye(nC),1,nSC);             % observation vectors (one for each context)
+C = repelem(eye(nC),1,nSC);             % observation (row) vectors - one for each context
 R = 0.0792;                             % observation noise
 
 % EM step size
