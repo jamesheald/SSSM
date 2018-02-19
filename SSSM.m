@@ -1,4 +1,4 @@
-function I = SSSM(A,Q,C,R,Phi0,eta,y,x0,V0,q,Channel,nC,nS,nT,nQ,Subj)
+function I = SSSM(A,Q,C,R,Phi0,eta,y,x0,V0,q,Channel,nC,nS,nT,nQ)
     
 % predicted state estimate
 I.xp = zeros(nS,nC,nT);
