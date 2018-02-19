@@ -1,4 +1,4 @@
-function [xp,Vp,xf,Vf,cL] = KF(A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev)
+function [xp,Vp,xf,Vf,cL] = KF(I,A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev)
 % Bank of Kalman filters
 
 if t == 1
@@ -23,11 +23,15 @@ xf = xp + K.*e';
 
 % update state covariance matrix
 InS = eye(nS);
-Vf = zeros(nS,nS,nC);
 for c = 1:nC
-    Vf(:,:,c) = (InS - K(:,c)*C(c,:))*Vp;
+    I.Vf(:,:,c,t) = (InS - K(:,c)*C(c,:))*Vp;
 end
 xp = repmat(xp,1,nC);
 
 % context log likelihood
-cL = log(1./sqrt(2*pi*S)) - 0.5*(e./sqrt(S)).^2;
+I.cL(:,t) = log(1./sqrt(2*pi*S)) - 0.5*(e./sqrt(S)).^2;
+
+
+    [I.xp(:,:,t),I.Vp(:,:,t),I.xf(:,:,t),I.Vf(:,:,:,t),I.cL(:,t)] = KF(A,Q,C,R,y,q,Channel,nC,nS,t,xprev,Vprev);
+    [I.cPost(:,t),I.xm(:,t),I.Vm(:,:,t),I.yp(q(t),t)] = ADF(C,I.Phi,nC,nS,q,I.cL,t,I.xf,I.xp,I.Vf);
+    [I.S,I.Phi] = EM(I.S,I.Phi,I.cPost,nC,nQ,q(t),eta,t);
