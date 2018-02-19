@@ -1,4 +1,4 @@
-function [cPost,xm,Vm,yp] = ADF(C,Phi,nC,nS,q,cLy,t,xf,xp,V,s)
+function [cPost,xm,Vm,yp] = ADF(C,Phi,nC,nS,q,cLy,t,xf,xp,V)
 % Assumed density filtering
 % INPUTS:
 % C     - observation vectors
@@ -12,7 +12,7 @@ function [cPost,xm,Vm,yp] = ADF(C,Phi,nC,nS,q,cLy,t,xf,xp,V,s)
 % Vm    - moment matched state covariance matrix
 
 % Calculate Bayes' rule using log-sum-exp trick to avoid numerical underflow
-Jcq = Phi(q(t,s),:,t);
+Jcq = Phi(q(t),:,t);
 cPre = Jcq/sum(Jcq);
 num = cLy(:,t) + log(cPre)';
 denom = max(num) + log(sum(exp(num - max(num))));
