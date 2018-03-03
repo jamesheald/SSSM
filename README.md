@@ -6,5 +6,3 @@ Source code files:
 - KF: recursive Bayesian estimation using a bank of Kalman filters
 - ADF: assumed density filtering to approximate the exact belief state with a single Gaussian
 - EM: online expectation maximisation to learn the cue emission probabilities
-
-The parameters used to run the simulations are from (Heald et al., *Nature Human Behavior*, 2018).
