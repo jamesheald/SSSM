@@ -2,7 +2,7 @@ function [S,Phi] = EM(S,Phi,cPost,nC,nQ,CueT,eta,t)
 % Online EM
 
 % E-step
-s         = zeros(nC,nQ);
+s         = zeros(nQ,nC);
 s(CueT,:) = cPost(:,t)';
 if t == 1
     S(:,:,t) = eta(t)*s;
