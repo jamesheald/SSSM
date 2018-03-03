@@ -25,7 +25,7 @@ I.cPost = zeros(nC,nT);
 I.yp = NaN(nQ,nT);
 
 % sufficient statistics
-I.S = zeros(nC,nC,nQ,nT);
+I.S = zeros(nQ,nC,nT);
 
 % parameter estimate
 I.Phi = zeros(nQ,nC,nT);
