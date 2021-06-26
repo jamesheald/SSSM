@@ -15,10 +15,6 @@ different points on a tool. *Nature human behaviour*, 2(4), 300-311. ([link to a
 ## Installation
 
 1. Download the SSSM.m file.
-    
-## Usage
-
-Instructions for how to use the SSSM can be found on the [SSSM wiki](https://github.com/jamesheald/SSSM/wiki).
 
 ## Contact information
 
