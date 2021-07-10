@@ -18,7 +18,7 @@ different points on a tool. *Nature human behaviour*, 2(4), 300-311. ([link to a
 
 ## Contact information
 
-Please e-mail me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com) if you have any questions.
+Feel free to e-mail me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com) if you have any questions.
 
 ## License
 
