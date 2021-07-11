@@ -1,6 +1,10 @@
 %% simulate experiment 2 of Heald et al. Nature human behaviour (2018)
 
-load('paradigm.mat','perturbations','cues')
+try
+    load('paradigm.mat','perturbations','cues')
+catch
+    error('Download the paradigm.mat file in the examples folder.')
+end
 
 same_field_subjects = 1:8;
 opoosing_field_subjects = 9:16;
