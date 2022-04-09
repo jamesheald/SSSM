@@ -10,7 +10,7 @@ The switching state-space model (SSSM) [[1](#reference)] is a principled Bayesia
 ### Reference
 
 1. [__Heald, J. B.__, Ingram, J. N., Flanagan, J. R., & Wolpert, D. M. Multiple motor memories are learned to control
-different points on a tool. *Nature human behaviour*, 2(4), 300-311 (2018).](https://www.nature.com/articles/s41562-018-0324-5)
+different points on a tool. *Nature human behaviour* 2(4), 300-311 (2018).](https://www.nature.com/articles/s41562-018-0324-5)
 
 ## Installation
 
