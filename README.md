@@ -22,7 +22,7 @@ Feel free to e-mail me at [jamesbheald@gmail.com](mailto:jamesbheald@gmail.com) 
 
 ## License
 
-The COIN model is released under the terms of the GNU General Public License v3.0.
+The SSSM model is released under the terms of the GNU General Public License v3.0.
 <!--Source code files:
 
 - KF: recursive Bayesian estimation using a bank of Kalman filters
